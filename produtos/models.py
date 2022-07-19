@@ -6,6 +6,7 @@ class Produto(models.Model):
     estoque = models.IntegerField('estoque atual')
     estoque_minimo = models.PositiveIntegerField('estoque mínimo', default=0)
     data = models.DateField(null=True, blank=True)
+    ativo = models.BooleanField()
 
     class Meta:
         ordering = ('produto',)
