@@ -4,7 +4,7 @@ from produtos.models import Produto
 
 
 class Produtos(admin.ModelAdmin):
-    list_display = ('id', 'produto', 'preco', 'estoque', 'estoque_minimo', 'data', 'ativo')
+    list_display = ('id', 'produto', 'preco', 'estoque', 'estoque_minimo', 'data_cadastro', 'ativo')
     list_display_links = ('id', 'produto')
     search_fields = ('produto', 'preco')
     list_filter = ('ativo',)
