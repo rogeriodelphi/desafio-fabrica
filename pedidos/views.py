@@ -1,8 +1,8 @@
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import viewsets, filters
+from rest_framework import viewsets, filters, generics
 
 from pedidos.models import Pedido
-from pedidos.serializers import PedidoSerializer
+from pedidos.serializers import PedidoSerializer, ListaPedidosClienteSerializer
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 
@@ -14,6 +14,14 @@ class PedidosViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
     ordering_fields = ['item']
     search_fields = ['item', 'quantidade']
-    filterset_fields = ['ativo']
+    filterset_fields = ['status']
     authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
+
+class ListaPedidosCliente(generics.ListAPIView):
+    """"Listando os pedidos de um(a) cliente"""
+    def get_queryset(self):
+        queryset = Pedido.objects.filter(cliente_id=self.kwargs['pk'])
+        return queryset
+    serializer_class = ListaPedidosClienteSerializer
+

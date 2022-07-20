@@ -3,14 +3,15 @@ from django.urls import path, include
 from rest_framework import routers
 from clientes.views import ClientesViewSet
 from produtos.views import ProdutosViewSet
-from pedidos.views import PedidosViewSet
+from pedidos.views import PedidosViewSet, ListaPedidosCliente
 
 router = routers.DefaultRouter()
-router.register('clientes', ClientesViewSet)
-router.register('produtos', ProdutosViewSet)
-router.register('pedidos', PedidosViewSet)
+router.register('clientes', ClientesViewSet, basename='Clientes')
+router.register('produtos', ProdutosViewSet, basename='Produtos')
+router.register('pedidos', PedidosViewSet, basename='Pedidos')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
+    path('cliente/<int:pk>/pedidos/', ListaPedidosCliente.as_view()),
 ]
