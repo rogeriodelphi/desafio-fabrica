@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'clientes',
     'produtos',
+    'pedidos',
     'django_filters',
 ]
 
