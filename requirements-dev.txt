@@ -11,4 +11,4 @@ six==1.16.0
 sqlparse==0.4.2
 validate-docbr==1.10.0
 dj-database-url==0.5.0
-dj-static==0.0.6s
+dj-static==0.0.6
