@@ -24,6 +24,9 @@ class ListaPedidosCliente(generics.ListAPIView):
         queryset = Pedido.objects.filter(cliente_id=self.kwargs['pk'])
         return queryset
     serializer_class = ListaPedidosClienteSerializer
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated]
+
 
 class ListaPedidosProduto(generics.ListAPIView):
     """Listando todos os pedidos para um determinado produto """
@@ -31,3 +34,5 @@ class ListaPedidosProduto(generics.ListAPIView):
         queryset = Pedido.objects.filter(produto=self.kwargs['pk'])
         return queryset
     serializer_class = ListaPedidosProdutoSerializer
+    authentication_classes = [BasicAuthentication]
+    permission_classes = [IsAuthenticated]
