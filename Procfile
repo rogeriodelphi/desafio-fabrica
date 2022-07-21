@@ -1,1 +1,1 @@
-web: gunicorn sisnutrilab.wsgi
+web: gunicorn desafio-fabrica.wsgi
