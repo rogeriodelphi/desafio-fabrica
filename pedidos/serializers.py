@@ -6,11 +6,10 @@ from pedidos.models import Pedido
 
 
 class PedidoSerializer(serializers.ModelSerializer):
-    cliente = serializers.ReadOnlyField(source='cliente.nome')
     status = serializers.SerializerMethodField()
     class Meta:
         model = Pedido
-        fields = ('id', 'data_pedido', 'cliente', 'status', 'produto')
+        fields = ('id', 'data_pedido', 'valor_total', 'cliente', 'status', 'produto')
 
     def get_status(self, obj):
         return obj.get_status_display()
