@@ -1,1 +1,1 @@
-web: gunicorn desafio-fabrica.wsgi
+web: gunicorn desafio_fabrica.wsgi
