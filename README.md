@@ -22,12 +22,11 @@
 <a  href=#telescope-tecnologias>Tecnologias utilizadas</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 <a href="#information_source-how-to-use">Como usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#gift-contributing">Contribuição</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a  href="https://github.com/rogeriodelphi/DjangoRestAPI/LICENSE">
 
-<h3>Arquitetura DRF rodando no Heroku:</h3>
-<img  width="100%"  src="https://i.imgur.com/IiTAqTF.png">
+<h3>Desafio Fábrica de Gênios</h3>
+
 <h3>Utilizando filtros, buscas e ordenação:</h3>
-<img  width="100%"  src="https://i.imgur.com/HJStcRm.png">
+<img  width="100%"  src="https://imgur.com/XPPVWNV.png">
 <h3>Uso de Serializers:</h3>
 <img  width="100%"  src="https://i.imgur.com/LZUmekt.png">
 </div>
@@ -49,10 +48,10 @@ Na linha de comando:
 
 ```bash
 # Para clonar este repositório
-$ git clone https://github.com/rogeriodelphi/DjangoRestAPI_clientes.git
+$ git clone https://github.com/rogeriodelphi/desafio-fabrica.git
 
 # No Heroku
-https://drf-cliente.herokuapp.com/
+https://desafio-fabrica.herokuapp.com/
 
 ```
 ---
