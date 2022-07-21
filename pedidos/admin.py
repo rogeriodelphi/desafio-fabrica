@@ -10,7 +10,7 @@ class Pedidos(admin.ModelAdmin):
     list_filter = ('status',)
     list_editable = ('status',)
     list_per_page = 10
-    # ordering = ('produto.produto',)
+    # ordering = ('produto.descricao',)
 
 
 admin.site.register(Pedido, Pedidos)

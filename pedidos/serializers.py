@@ -6,10 +6,11 @@ from pedidos.models import Pedido
 
 
 class PedidoSerializer(serializers.ModelSerializer):
+    cliente = serializers.ReadOnlyField(source='cliente.nome')
     status = serializers.SerializerMethodField()
     class Meta:
         model = Pedido
-        fields = '__all__'
+        fields = ('id', 'data_pedido', 'cliente', 'status', 'produto')
 
     def get_status(self, obj):
         return obj.get_status_display()
@@ -20,17 +21,16 @@ class ListaPedidosClienteSerializer(serializers.ModelSerializer):
     status = serializers.SerializerMethodField()
     class Meta:
         model = Pedido
-        fields = ['cliente', 'produto', 'valor_total', 'status', 'observacao', 'data_pedido']
+        fields = ['cliente', 'id', 'data_pedido', 'status', 'produto', 'valor_total',  'observacao']
 
     def get_status(self, obj):
         return obj.get_status_display()
 
 class ListaPedidosProdutoSerializer(serializers.ModelSerializer):
-    produto_nome = serializers.ReadOnlyField(source='produto.produto')
     status = serializers.SerializerMethodField()
     class Meta:
         model = Pedido
-        fields = ['id', 'data_pedido', 'status', 'produto_nome']
+        fields = ['id', 'data_pedido', 'status', 'valor_total',  'observacao']
 
     def get_status(self, obj):
         return obj.get_status_display()

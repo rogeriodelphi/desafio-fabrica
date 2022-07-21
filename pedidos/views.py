@@ -12,8 +12,8 @@ class PedidosViewSet(viewsets.ModelViewSet):
     queryset = Pedido.objects.all()
     serializer_class = PedidoSerializer
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
-    ordering_fields = ['produto']
-    search_fields = ['produto', 'valor_total']
+    ordering_fields = ['descricao']
+    search_fields = ['descricao', 'valor_total']
     filterset_fields = ['status']
     authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
